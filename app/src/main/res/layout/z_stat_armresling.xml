@@ -1,0 +1,205 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#353433">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewPlayerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFA500"/>
+
+        <TextView
+            android:id="@+id/textViewPlayerNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#FFA500"/>
+
+        <TextView
+            android:id="@+id/MatchesPlayed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Матчей сыграно: 0"
+            android:textSize="18sp"
+            android:textColor="#FFA500"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"/>
+        <Spinner
+            android:id="@+id/spinnerMatchSelector"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="16dp"
+            android:background="#1c1c1c"
+            android:textColor="#FFA500" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="#1c1c1c"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/TwoPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#FFA500"
+                    android:text="Правая рука"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/textViewTwoPointsScored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#FFA500"
+                    android:text="Количество побед: 0"/>
+
+                <TextView
+                    android:id="@+id/textViewTwoPointsMissed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#FFA500"
+                    android:text="Количество пройгрышей: 0"/>
+
+                <TextView
+                    android:id="@+id/textViewTwoPointsPercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Процент побед:"
+                    android:textSize="18sp"
+                    android:textColor="#FFA500"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutTwoPointsPercentage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <View
+                        android:id="@+id/viewTwoPointsPercentage"
+                        android:layout_width="0dp"
+                        android:layout_height="10dp"
+                        android:background="#FFA500"/>
+
+                    <TextView
+                        android:id="@+id/textViewTwoPointsPercentageValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="0%"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/graph"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="16dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="#1c1c1c"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/ThreePoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#FFA500"
+                    android:text="Левая рука"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/textViewThreePointsScored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#FFA500"
+                    android:text="Количество побед: 0"/>
+
+                <TextView
+                    android:id="@+id/textViewThreePointsMissed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#FFA500"
+                    android:text="Количество пройгрышей: 0"/>
+
+                <TextView
+                    android:id="@+id/textViewThreePointsPercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Процент побед:"
+                    android:textSize="18sp"
+                    android:textColor="#FFA500"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutThreePointsPercentage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <View
+                        android:id="@+id/viewThreePointsPercentage"
+                        android:layout_width="0dp"
+                        android:layout_height="10dp"
+                        android:background="#FFA500"/>
+
+                    <TextView
+                        android:id="@+id/textViewThreePointsPercentageValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="0%"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/graphThreePoints"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="16dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

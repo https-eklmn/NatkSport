@@ -1,0 +1,106 @@
+<resources>
+    <string name="app_name">NatkSport</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="roles_array">
+        <item>Все</item>
+        <item>Администратор</item>
+        <item>Физрук</item>
+        <item>Пользователь</item>
+    </string-array>
+
+    <string-array name="sob_bascet">
+        <item>Двухочковый бросок</item>
+        <item>Заблокировал</item>
+        <item>Трехочковый бросок</item>
+        <item>Подбор в защите</item>
+        <item>Подбор в атаке</item>
+        <item>Потеря мяча</item>
+        <item>Фол</item>
+        <item>Технический фол</item>
+        <item>Голевая передача</item>
+        <item>Штрафной бросок</item>
+    </string-array>
+
+    <string-array name="sob_voliebol">
+        <item>Подача</item>
+        <item>Прием мяча</item>
+        <item>Нападающий удар</item>
+        <item>Блок</item>
+    </string-array>
+
+    <string-array name="sob_futbol">
+        <item>Автогол</item>
+        <item>Удар в створ ворот</item>
+        <item>Пенальти</item>
+        <item>Красная карточка</item>
+        <item>жёлтая карточка</item>
+        <item>Голевая передача</item>
+        <item>Сейф</item>
+    </string-array>
+
+    <string-array name="sob_nastol_tenis">
+        <item>Подача</item>
+        <item>Контратака</item>
+    </string-array>
+
+    <string-array name="sob_GTO">
+        <item>Забег на 60м</item>
+        <item>Забег на 2км</item>
+        <item>Забег на 3км</item>
+        <item>Заплыв на 50м</item>
+        <item>Подтягивание</item>
+        <item>Поднимание туловища лежа на спине</item>
+        <item>Наклон вперед из положения стоя</item>
+        <item>Прыжок в длину с места</item>
+        <item>Метание мяча в цель</item>
+    </string-array>
+
+    <string-array name="sob_poliatlon">
+        <item>Забег на лыжах 5км</item>
+        <item>Забег на лыжах 3км</item>
+        <item>Подтягивание</item>
+        <item>Отжимание</item>
+        <item>Стрельба из пневматической винтовки</item>
+    </string-array>
+
+    <string-array name="sob_legkaia_atl">
+        <item>Забег на 100м</item>
+        <item>Забег на 400м</item>
+        <item>Забег на 800м</item>
+        <item>Эстафета на 400м</item>
+        <item>Эстафета на 300м</item>
+        <item>Эстафета на 200м</item>
+        <item>Эстафета на 100м</item>
+    </string-array>
+
+    <string-array name="sob_girevoi">
+        <item>Рывок 24кг</item>
+        <item>Рывок 32кг</item>
+        <item>Толчок 24кг</item>
+        <item>Толчок 32кг</item>
+    </string-array>
+
+    <string-array name="sob_lizi">
+        <item>Забег на 1км</item>
+        <item>Забег на 3км</item>
+        <item>Забег на 5км</item>
+    </string-array>
+
+    <string-array name="sob_sport_orient">
+        <item>Время прохождения</item>
+        <item>Отметка пройдена не правильно</item>
+    </string-array>
+
+    <string-array name="sob_armresling">
+        <item>Победа на правой руке</item>
+        <item>Победа на левой руке</item>
+        <item>Пройгрыш на правой руке</item>
+        <item>Пройгрыш на левой руке</item>
+    </string-array>
+
+    <string-array name="sob_plavanie">
+        <item>Заплыв на 50м</item>
+        <item>Эстафета на 100м</item>
+    </string-array>
+
+</resources>

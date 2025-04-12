@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NatkSport"
+        tools:targetApi="31">
+        <activity
+            android:name=".Stat.StatSportOrient"
+            android:exported="false" />
+        <activity
+            android:name=".Stat.StatGTO"
+            android:exported="false" />
+        <activity
+            android:name=".Stat.StatArmresling"
+            android:exported="false" />
+        <activity
+            android:name=".Stat.StatPlavanie"
+            android:exported="false" />
+        <activity
+            android:name=".Stat.StatGirevoiSport"
+            android:exported="false" />
+        <activity
+            android:name=".Stat.StatPoliatlon"
+            android:exported="false" />
+        <activity
+            android:name=".Stat.StatLizhi"
+            android:exported="false" />
+        <activity
+            android:name=".Stat.StatLegkaiaAtlet"
+            android:exported="false" />
+        <activity
+            android:name=".Stat.StatNastolTenis"
+            android:exported="false" />
+        <activity
+            android:name=".Stat.StatVoleball"
+            android:exported="false" />
+        <activity
+            android:name=".Stat.StatFutball"
+            android:exported="false" />
+        <activity
+            android:name=".Stat.StatBascket"
+            android:exported="false" />
+        <activity
+            android:name=".StatPlayer"
+            android:exported="false" />
+        <activity
+            android:name=".FragmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

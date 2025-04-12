@@ -1,0 +1,99 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#F2F2F2"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Редактировать пользователя"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#0073B7"
+        android:paddingBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextFamilia"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:textColorHint="#3C3C3C"
+        android:background="@drawable/edittext_background"
+        android:textColor="#000000"
+        android:hint="Фамилия"/>
+
+    <EditText
+        android:id="@+id/editTextImia"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:textColorHint="#3C3C3C"
+        android:background="@drawable/edittext_background"
+        android:textColor="#000000"
+        android:hint="Имя"/>
+
+    <EditText
+        android:id="@+id/editTextOtchestvo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:textColorHint="#3C3C3C"
+        android:background="@drawable/edittext_background"
+        android:textColor="#000000"
+        android:hint="Отчество"/>
+
+    <EditText
+        android:id="@+id/editTextLogin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:textColorHint="#3C3C3C"
+        android:background="@drawable/edittext_background"
+        android:textColor="#000000"
+        android:hint="Логин"/>
+
+    <EditText
+        android:id="@+id/editTextPochta"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:textColorHint="#3C3C3C"
+        android:background="@drawable/edittext_background"
+        android:textColor="#000000"
+        android:hint="Электронная почта"/>
+
+    <Spinner
+        android:id="@+id/spinnerRolesEdit"
+        android:layout_width="match_parent"
+        android:background="@drawable/button_background"
+        android:layout_marginTop="8dp"
+        android:padding="9dp"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+        <Button
+            android:id="@+id/buttonCancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E2A45"
+            android:text="Отмена"/>
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Сохранить"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#0073B7"
+            />
+    </LinearLayout>
+</LinearLayout>
