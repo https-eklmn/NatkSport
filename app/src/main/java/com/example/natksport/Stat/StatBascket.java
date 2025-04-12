@@ -1,5 +1,6 @@
 package com.example.natksport.Stat;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -211,7 +212,6 @@ public class StatBascket extends AppCompatActivity {
                         }
                     }
                 }
-
                 updateStats(twoPointsScored, twoPointsMissed, blocked, threePointsScored, threePointsMissed,
                         defensiveRebounds, offensiveRebounds, turnovers, fouls, technicalFouls, assists,
                         freeThrowsScored, freeThrowsMissed, uniqueMatches.size());
@@ -337,7 +337,6 @@ public class StatBascket extends AppCompatActivity {
         TextView textViewFreeThrowsPercentageValue = findViewById(R.id.textViewFreeThrowsPercentageValue);
         textViewFreeThrowsPercentageValue.setText(freeThrowsPercentage + "%");
 
-        // Обновление визуального представления для штрафных бросков
         View viewFreeThrowsPercentage = findViewById(R.id.viewFreeThrowsPercentage);
         int totalWidthFreeThrows = ((LinearLayout) findViewById(R.id.linearLayoutFreeThrowsPercentage)).getWidth();
         int filledWidthFreeThrows = (int) (totalWidthFreeThrows * (freeThrowsPercentage / 100.0));
@@ -351,7 +350,6 @@ public class StatBascket extends AppCompatActivity {
         TextView textViewTwoPointsPercentageValue = findViewById(R.id.textViewTwoPointsPercentageValue);
         textViewTwoPointsPercentageValue.setText(twoPointsPercentage + "%");
 
-        // Обновление визуального представления для двухочковых
         View viewTwoPointsPercentage = findViewById(R.id.viewTwoPointsPercentage);
         int totalWidthTwoPoints = ((LinearLayout) findViewById(R.id.linearLayoutTwoPointsPercentage)).getWidth();
         int filledWidthTwoPoints = (int) (totalWidthTwoPoints * (twoPointsPercentage / 100.0));
@@ -365,7 +363,6 @@ public class StatBascket extends AppCompatActivity {
         TextView textViewThreePointsPercentageValue = findViewById(R.id.textViewThreePointsPercentageValue);
         textViewThreePointsPercentageValue.setText(threePointsPercentage + "%");
 
-        // Обновление визуального представления для трехочковых
         View viewThreePointsPercentage = findViewById(R.id.viewThreePointsPercentage);
         int totalWidthThreePoints = ((LinearLayout) findViewById(R.id.linearLayoutThreePointsPercentage)).getWidth();
         int filledWidthThreePoints = (int) (totalWidthThreePoints * (threePointsPercentage / 100.0));
@@ -415,7 +412,6 @@ public class StatBascket extends AppCompatActivity {
                     }
                 }
 
-                // Обработка сохраненных данных:
                 for (Map.Entry<String, int[]> entry : matchStats.entrySet()) {
                     int[] stats = entry.getValue();
                     int totalTwoPoints = stats[0] + stats[1];
@@ -460,6 +456,10 @@ public class StatBascket extends AppCompatActivity {
         graph.getViewport().setMaxY(100);
         graph.getGridLabelRenderer().setNumHorizontalLabels(twoPointsPercentages.size());
         graph.getGridLabelRenderer().setNumVerticalLabels(11);
+
+        graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
 
     private void addDataToThreePointsGraph(List<Integer> threePointsPercentages) {
@@ -475,6 +475,10 @@ public class StatBascket extends AppCompatActivity {
         graphThreePoints.getViewport().setMaxY(100);
         graphThreePoints.getGridLabelRenderer().setNumHorizontalLabels(threePointsPercentages.size());
         graphThreePoints.getGridLabelRenderer().setNumVerticalLabels(11);
+
+        graphThreePoints.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
+        graphThreePoints.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
+        graphThreePoints.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
 
     private void addDataToFreeThrowsGraph(List<Integer> freeThrowsPercentages) {
@@ -490,5 +494,9 @@ public class StatBascket extends AppCompatActivity {
         graphFreeThrows.getViewport().setMaxY(100);
         graphFreeThrows.getGridLabelRenderer().setNumHorizontalLabels(freeThrowsPercentages.size());
         graphFreeThrows.getGridLabelRenderer().setNumVerticalLabels(11);
+
+        graphFreeThrows.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
+        graphFreeThrows.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
+        graphFreeThrows.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
 }

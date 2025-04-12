@@ -1,5 +1,6 @@
 package com.example.natksport.Stat;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -368,6 +369,10 @@ public class StatVoleball extends AppCompatActivity {
         graph.getViewport().setMaxY(100);
         graph.getGridLabelRenderer().setNumHorizontalLabels(twoPointsPercentages.size());
         graph.getGridLabelRenderer().setNumVerticalLabels(11);
+
+        graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
 
     private void addDataToThreePointsGraph(List<Integer> threePointsPercentages) {
@@ -383,6 +388,10 @@ public class StatVoleball extends AppCompatActivity {
         graphThreePoints.getViewport().setMaxY(100);
         graphThreePoints.getGridLabelRenderer().setNumHorizontalLabels(threePointsPercentages.size());
         graphThreePoints.getGridLabelRenderer().setNumVerticalLabels(11);
+
+        graphThreePoints.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
+        graphThreePoints.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
+        graphThreePoints.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
 
 }

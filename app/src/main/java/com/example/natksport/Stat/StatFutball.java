@@ -1,5 +1,6 @@
 package com.example.natksport.Stat;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -154,7 +155,7 @@ public class StatFutball extends AppCompatActivity {
                 int defensiveRebounds = 0;
                 int offensiveRebounds = 0;
                 int assists = 0;
-                int ownGoals = 0; // Переменная для автоголов
+                int ownGoals = 0;
 
                 Set<String> uniqueMatches = new HashSet<>();
 
@@ -395,6 +396,10 @@ public class StatFutball extends AppCompatActivity {
         graph.getViewport().setMaxY(100);
         graph.getGridLabelRenderer().setNumHorizontalLabels(twoPointsPercentages.size());
         graph.getGridLabelRenderer().setNumVerticalLabels(11);
+
+        graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
 
     private void addDataToThreePointsGraph(List<Integer> threePointsPercentages) {
@@ -410,6 +415,10 @@ public class StatFutball extends AppCompatActivity {
         graphThreePoints.getViewport().setMaxY(100);
         graphThreePoints.getGridLabelRenderer().setNumHorizontalLabels(threePointsPercentages.size());
         graphThreePoints.getGridLabelRenderer().setNumVerticalLabels(11);
+
+        graphThreePoints.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
+        graphThreePoints.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
+        graphThreePoints.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
 
 }

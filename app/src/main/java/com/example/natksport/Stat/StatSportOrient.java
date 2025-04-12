@@ -1,5 +1,6 @@
 package com.example.natksport.Stat;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -26,7 +27,6 @@ public class StatSportOrient extends AppCompatActivity {
     private TextView textViewName, textViewNumber, textViewBestOneHundrMetrs, textViewWorstOneHundrMetrs,
             textViewAverageOneHundrMetrs, textViewAverageFourHundrMetrs;
     private GraphView OneHundrMetrsGraph;
-    private List<Match> matchList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +77,6 @@ public class StatSportOrient extends AppCompatActivity {
                 }
 
                 updateStatisticsDisplay(hundredMeterTimes, fourHundredMeterTimes);
-
                 updateGraphs(hundredMeterTimes);
             }
 
@@ -137,6 +136,10 @@ public class StatSportOrient extends AppCompatActivity {
 
         graph.getGridLabelRenderer().setNumHorizontalLabels(times.size());
         graph.getGridLabelRenderer().setVerticalAxisTitle("Время в секундах");
+
+        graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
 
 }

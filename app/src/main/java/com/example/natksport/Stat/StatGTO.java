@@ -1,5 +1,6 @@
 package com.example.natksport.Stat;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -34,11 +35,6 @@ public class StatGTO extends AppCompatActivity {
             textViewBestMetanBall,textViewWorstMetanBall,textViewAverageMetanBall;
     private GraphView OneHundrMetrsGraph,FourHundrMetrsGraph,EightHundrMetrsGraph,FourHundrMetrsEstaGraph,ThreeHundrMetrsEstaGraph,
             TwoHundrMetrsEstaGraph,OneHundrMetrsEstaGraph,JumpGraph,MetanBallGraph;
-
-
-
-    private List<Match> matchList = new ArrayList<>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -166,10 +162,13 @@ public class StatGTO extends AppCompatActivity {
         updateDisplayForDistanceTime(textViewBestFourHundrMetrs, textViewWorstFourHundrMetrs, textViewAverageFourHundrMetrs,  fourHundred);
         updateDisplayForDistanceTime(textViewBestEightHundrMetrs, textViewWorstEightHundrMetrs, textViewAverageEightHundrMetrs,  eightHundred);
         updateDisplayForDistanceTime(textViewBestFourHundrMetrsEsta, textViewWorstFourHundrMetrsEsta, textViewAverageFourHundrMetrsEsta,  fourHundredRelay);
+
         updateDisplayForRepsOrScores(textViewBestThreeHundrMetrsEsta, textViewWorstThreeHundrMetrsEsta, textViewAverageThreeHundrMetrsEsta,  threeHundredRelay);
         updateDisplayForRepsOrScores(textViewBestTwoHundrMetrsEsta, textViewWorstTwoHundrMetrsEsta, textViewAverageTwoHundrMetrsEsta,  twoHundredRelay);
+
         updateDisplayForDistance(textViewBestOneHundrMetrsEsta, textViewWorstOneHundrMetrsEsta, textViewAverageOneHundrMetrsEsta,  oneHundredRelay);
         updateDisplayForDistance(textViewBestJump, textViewWorstJump, textViewAverageJump,  JumpRelay);
+
         updateDisplayForShootingScore(textViewBestMetanBall, textViewWorstMetanBall, textViewAverageMetanBall,  MetanBallRelay);
     }
     private void updateDisplayForShootingScore(TextView bestText, TextView worstText, TextView averageText, List<Integer> scores) {
@@ -245,11 +244,14 @@ public class StatGTO extends AppCompatActivity {
         setupGraph(FourHundrMetrsGraph, fourHundred);
         setupGraph(EightHundrMetrsGraph, eightHundred);
         setupGraph(FourHundrMetrsEstaGraph, fourHundredRelay);
-        setupGraph(ThreeHundrMetrsEstaGraph, threeHundredRelay);
-        setupGraph(TwoHundrMetrsEstaGraph, twoHundredRelay);
-        setupGraph(OneHundrMetrsEstaGraph, oneHundredRelay);
-        setupGraph(JumpGraph, JumpRelay);
-        setupGraph(MetanBallGraph, MetanBallRelay);
+
+        setupGraphP(ThreeHundrMetrsEstaGraph, threeHundredRelay);
+        setupGraphP(TwoHundrMetrsEstaGraph, twoHundredRelay);
+
+        setupGraphD(OneHundrMetrsEstaGraph, oneHundredRelay);
+        setupGraphD(JumpGraph, JumpRelay);
+
+        setupGraphS(MetanBallGraph, MetanBallRelay);
     }
 
     private void setupGraph(GraphView graph, List<Integer> times) {
@@ -271,5 +273,84 @@ public class StatGTO extends AppCompatActivity {
 
         graph.getGridLabelRenderer().setNumHorizontalLabels(times.size());
         graph.getGridLabelRenderer().setVerticalAxisTitle("Время в секундах");
+
+        graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setGridColor(Color.BLACK);
+    }
+    private void setupGraphD(GraphView graph, List<Integer> times) {
+        if (times.isEmpty()) {
+            graph.removeAllSeries();
+            return;
+        }
+
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<>();
+        for (int i = 0; i < times.size(); i++) {
+            series.appendData(new DataPoint(i + 1, times.get(i)), true, times.size());
+        }
+
+        graph.addSeries(series);
+        graph.getViewport().setMinY(0);
+        graph.getViewport().setMaxY(Collections.max(times) + 10);
+        graph.getViewport().setMinX(1);
+        graph.getViewport().setMaxX(times.size());
+
+        graph.getGridLabelRenderer().setNumHorizontalLabels(times.size());
+        graph.getGridLabelRenderer().setVerticalAxisTitle("Сантиметры");
+        graph.getGridLabelRenderer().setVerticalAxisTitleColor(Color.BLACK);
+
+        graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setGridColor(Color.BLACK);
+    }
+    private void setupGraphS(GraphView graph, List<Integer> times) {
+        if (times.isEmpty()) {
+            graph.removeAllSeries();
+            return;
+        }
+
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<>();
+        for (int i = 0; i < times.size(); i++) {
+            series.appendData(new DataPoint(i + 1, times.get(i)), true, times.size());
+        }
+
+        graph.addSeries(series);
+        graph.getViewport().setMinY(0);
+        graph.getViewport().setMaxY(Collections.max(times) + 10);
+        graph.getViewport().setMinX(1);
+        graph.getViewport().setMaxX(times.size());
+
+        graph.getGridLabelRenderer().setNumHorizontalLabels(times.size());
+        graph.getGridLabelRenderer().setVerticalAxisTitle("Набрано очков");
+        graph.getGridLabelRenderer().setVerticalAxisTitleColor(Color.BLACK);
+
+        graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setGridColor(Color.BLACK);
+    }
+    private void setupGraphP(GraphView graph, List<Integer> times) {
+        if (times.isEmpty()) {
+            graph.removeAllSeries();
+            return;
+        }
+
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<>();
+        for (int i = 0; i < times.size(); i++) {
+            series.appendData(new DataPoint(i + 1, times.get(i)), true, times.size());
+        }
+
+        graph.addSeries(series);
+        graph.getViewport().setMinY(0);
+        graph.getViewport().setMaxY(Collections.max(times) + 10);
+        graph.getViewport().setMinX(1);
+        graph.getViewport().setMaxX(times.size());
+
+        graph.getGridLabelRenderer().setNumHorizontalLabels(times.size());
+        graph.getGridLabelRenderer().setVerticalAxisTitle("Кол-во повторений");
+        graph.getGridLabelRenderer().setVerticalAxisTitleColor(Color.BLACK);
+
+        graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
 }

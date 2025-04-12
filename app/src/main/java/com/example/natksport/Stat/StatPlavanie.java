@@ -1,5 +1,6 @@
 package com.example.natksport.Stat;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -23,8 +24,9 @@ import java.util.Collections;
 import java.util.List;
 public class StatPlavanie extends AppCompatActivity {
 
-    private TextView textViewName, textViewNumber, OneHundrMetrsText, textViewBestOneHundrMetrs, textViewWorstOneHundrMetrs,
-            textViewAverageOneHundrMetrs, FourHundrMetrsText, textViewBestFourHundrMetrs, textViewWorstFourHundrMetrs, textViewAverageFourHundrMetrs;
+    private TextView textViewName, textViewNumber,
+            textViewBestOneHundrMetrs, textViewWorstOneHundrMetrs, textViewAverageOneHundrMetrs,
+            textViewBestFourHundrMetrs, textViewWorstFourHundrMetrs, textViewAverageFourHundrMetrs;
     private GraphView OneHundrMetrsGraph,FourHundrMetrsGraph;
     private List<Match> matchList = new ArrayList<>();
 
@@ -43,11 +45,11 @@ public class StatPlavanie extends AppCompatActivity {
 
         textViewName = findViewById(R.id.textViewPlayerName);
         textViewNumber = findViewById(R.id.textViewPlayerNumber);
-        OneHundrMetrsText = findViewById(R.id.OneHundrMetrsText);
+
         textViewBestOneHundrMetrs = findViewById(R.id.textViewBestOneHundrMetrs);
         textViewWorstOneHundrMetrs = findViewById(R.id.textViewWorstOneHundrMetrs);
         textViewAverageOneHundrMetrs = findViewById(R.id.textViewAverageOneHundrMetrs);
-        FourHundrMetrsText = findViewById(R.id.FourHundrMetrsText);
+
         textViewBestFourHundrMetrs = findViewById(R.id.textViewBestFourHundrMetrs);
         textViewWorstFourHundrMetrs = findViewById(R.id.textViewWorstFourHundrMetrs);
         textViewAverageFourHundrMetrs = findViewById(R.id.textViewAverageFourHundrMetrs);
@@ -78,8 +80,6 @@ public class StatPlavanie extends AppCompatActivity {
                             case "Эстафета на 100м":
                                 fourHundredMeterTimes.add(time);
                                 break;
-
-
                         }
                     }
                 }
@@ -88,18 +88,14 @@ public class StatPlavanie extends AppCompatActivity {
 
                 updateGraphs(hundredMeterTimes, fourHundredMeterTimes);
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
     }
-
     private void updateStatisticsDisplay(List<Integer> hundred, List<Integer> fourHundred) {
         updateDisplayForDistance(textViewBestOneHundrMetrs, textViewWorstOneHundrMetrs, textViewAverageOneHundrMetrs,  hundred);
         updateDisplayForDistance(textViewBestFourHundrMetrs, textViewWorstFourHundrMetrs, textViewAverageFourHundrMetrs,  fourHundred);
-
-
     }
 
     private void updateDisplayForDistance( TextView bestText, TextView worstText, TextView averageText, List<Integer> times) {
@@ -145,6 +141,10 @@ public class StatPlavanie extends AppCompatActivity {
 
         graph.getGridLabelRenderer().setNumHorizontalLabels(times.size());
         graph.getGridLabelRenderer().setVerticalAxisTitle("Время в секундах");
+
+        graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
 
 }

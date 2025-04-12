@@ -1,5 +1,6 @@
 package com.example.natksport.Stat;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -22,20 +23,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 public class StatLegkaiaAtlet extends AppCompatActivity {
-    private TextView textViewName, textViewNumber, OneHundrMetrsText, textViewBestOneHundrMetrs, textViewWorstOneHundrMetrs,
-            textViewAverageOneHundrMetrs, FourHundrMetrsText, textViewBestFourHundrMetrs, textViewWorstFourHundrMetrs, textViewAverageFourHundrMetrs,
-            EightHundrMetrsText, textViewBestEightHundrMetrs, textViewWorstEightHundrMetrs, textViewAverageEightHundrMetrs, FourHundrMetrsEstaText,
-            textViewBestFourHundrMetrsEsta, textViewWorstFourHundrMetrsEsta, textViewAverageFourHundrMetrsEsta, ThreeHundrMetrsEstaText,
-            textViewBestThreeHundrMetrsEsta, textViewWorstThreeHundrMetrsEsta, textViewAverageThreeHundrMetrsEsta, TwoHundrMetrsEstaText,
-            textViewBestTwoHundrMetrsEsta, textViewWorstTwoHundrMetrsEsta, textViewAverageTwoHundrMetrsEsta, OneHundrMetrsEstaText,
+    private TextView textViewName, textViewNumber,
+            textViewBestOneHundrMetrs, textViewWorstOneHundrMetrs, textViewAverageOneHundrMetrs,
+            textViewBestFourHundrMetrs, textViewWorstFourHundrMetrs, textViewAverageFourHundrMetrs,
+            textViewBestEightHundrMetrs, textViewWorstEightHundrMetrs, textViewAverageEightHundrMetrs,
+            textViewBestFourHundrMetrsEsta, textViewWorstFourHundrMetrsEsta, textViewAverageFourHundrMetrsEsta,
+            textViewBestThreeHundrMetrsEsta, textViewWorstThreeHundrMetrsEsta, textViewAverageThreeHundrMetrsEsta,
+            textViewBestTwoHundrMetrsEsta, textViewWorstTwoHundrMetrsEsta, textViewAverageTwoHundrMetrsEsta,
             textViewBestOneHundrMetrsEsta, textViewWorstOneHundrMetrsEsta, textViewAverageOneHundrMetrsEsta;
     private GraphView OneHundrMetrsGraph,FourHundrMetrsGraph,EightHundrMetrsGraph,FourHundrMetrsEstaGraph,ThreeHundrMetrsEstaGraph,
             TwoHundrMetrsEstaGraph,OneHundrMetrsEstaGraph;
-
-
-
-    private List<Match> matchList = new ArrayList<>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,44 +52,39 @@ public class StatLegkaiaAtlet extends AppCompatActivity {
 
         textViewName = findViewById(R.id.textViewPlayerName);
         textViewNumber = findViewById(R.id.textViewPlayerNumber);
-        OneHundrMetrsText = findViewById(R.id.OneHundrMetrsText);
+
         textViewBestOneHundrMetrs = findViewById(R.id.textViewBestOneHundrMetrs);
         textViewWorstOneHundrMetrs = findViewById(R.id.textViewWorstOneHundrMetrs);
         textViewAverageOneHundrMetrs = findViewById(R.id.textViewAverageOneHundrMetrs);
-        FourHundrMetrsText = findViewById(R.id.FourHundrMetrsText);
+
         textViewBestFourHundrMetrs = findViewById(R.id.textViewBestFourHundrMetrs);
         textViewWorstFourHundrMetrs = findViewById(R.id.textViewWorstFourHundrMetrs);
         textViewAverageFourHundrMetrs = findViewById(R.id.textViewAverageFourHundrMetrs);
-        EightHundrMetrsText = findViewById(R.id.EightHundrMetrsText);
+
         textViewBestEightHundrMetrs = findViewById(R.id.textViewBestEightHundrMetrs);
         textViewWorstEightHundrMetrs = findViewById(R.id.textViewWorstEightHundrMetrs);
         textViewAverageEightHundrMetrs = findViewById(R.id.textViewAverageEightHundrMetrs);
-        FourHundrMetrsEstaText = findViewById(R.id.FourHundrMetrsEstaText);
+
         textViewBestFourHundrMetrsEsta = findViewById(R.id.textViewBestFourHundrMetrsEsta);
         textViewWorstFourHundrMetrsEsta = findViewById(R.id.textViewWorstFourHundrMetrsEsta);
         textViewAverageFourHundrMetrsEsta = findViewById(R.id.textViewAverageFourHundrMetrsEsta);
-        ThreeHundrMetrsEstaText = findViewById(R.id.ThreeHundrMetrsEstaText);
+
         textViewBestThreeHundrMetrsEsta = findViewById(R.id.textViewBestThreeHundrMetrsEsta);
         textViewWorstThreeHundrMetrsEsta = findViewById(R.id.textViewWorstThreeHundrMetrsEsta);
         textViewAverageThreeHundrMetrsEsta = findViewById(R.id.textViewAverageThreeHundrMetrsEsta);
-        TwoHundrMetrsEstaText = findViewById(R.id.TwoHundrMetrsEstaText);
+
         textViewBestTwoHundrMetrsEsta = findViewById(R.id.textViewBestTwoHundrMetrsEsta);
         textViewWorstTwoHundrMetrsEsta = findViewById(R.id.textViewWorstTwoHundrMetrsEsta);
         textViewAverageTwoHundrMetrsEsta = findViewById(R.id.textViewAverageTwoHundrMetrsEsta);
-        OneHundrMetrsEstaText = findViewById(R.id.OneHundrMetrsEstaText);
+
         textViewBestOneHundrMetrsEsta = findViewById(R.id.textViewBestOneHundrMetrsEsta);
         textViewWorstOneHundrMetrsEsta = findViewById(R.id.textViewWorstOneHundrMetrsEsta);
         textViewAverageOneHundrMetrsEsta = findViewById(R.id.textViewAverageOneHundrMetrsEsta);
 
-
         textViewName.setText(playerName);
         textViewNumber.setText(playerNumber);
 
-
         loadRunStatistics(playerId);
-
-
-
 
     }
     private void loadRunStatistics(String playerId) {
@@ -211,6 +203,10 @@ public class StatLegkaiaAtlet extends AppCompatActivity {
 
         graph.getGridLabelRenderer().setNumHorizontalLabels(times.size());
         graph.getGridLabelRenderer().setVerticalAxisTitle("Время в секундах");
+
+        graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
 
 }

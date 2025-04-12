@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#353433">
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,20 +17,20 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="#FFA500"/>
+            android:textColor="#1E2A45"/>
 
         <TextView
             android:id="@+id/textViewPlayerNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:textColor="#FFA500"/>
+            android:textColor="#1E2A45"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="#1c1c1c"
+            app:cardBackgroundColor="#F2F2F2"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -45,7 +45,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Бег 60м"
                     android:layout_gravity="center"
                     android:textStyle="bold"/>
@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Лучшее время прохождения дистанции:"/>
 
                 <TextView
@@ -63,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Худшее время прохождения дистанции:"/>
 
                 <TextView
@@ -72,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:text="Среднее время прохождения дистанции:"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"/>
+                    android:textColor="#0073B7"/>
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/OneHundrMetrsGraph"
@@ -86,7 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="#1c1c1c"
+            app:cardBackgroundColor="#F2F2F2"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -101,7 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Бег на 2км"
                     android:layout_gravity="center"
                     android:textStyle="bold"/>
@@ -111,7 +111,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Лучшее время прохождения дистанции:"/>
 
                 <TextView
@@ -119,7 +119,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Худшее время прохождения дистанции:"/>
 
                 <TextView
@@ -128,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:text="Среднее время прохождения дистанции:"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"/>
+                    android:textColor="#0073B7"/>
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/FourHundrMetrsGraph"
@@ -142,7 +142,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="#1c1c1c"
+            app:cardBackgroundColor="#F2F2F2"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -157,7 +157,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Бег на 3км"
                     android:layout_gravity="center"
                     android:textStyle="bold"/>
@@ -167,7 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Лучшее время прохождения дистанции:"/>
 
                 <TextView
@@ -175,7 +175,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Худшее время прохождения дистанции:"/>
 
                 <TextView
@@ -184,7 +184,7 @@
                     android:layout_height="wrap_content"
                     android:text="Среднее время прохождения дистанции:"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"/>
+                    android:textColor="#0073B7"/>
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/EightHundrMetrsGraph"
@@ -198,7 +198,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="#1c1c1c"
+            app:cardBackgroundColor="#F2F2F2"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -213,7 +213,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Заплыв на 50м"
                     android:layout_gravity="center"
                     android:textStyle="bold"/>
@@ -223,7 +223,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Лучшее время прохождения дистанции:"/>
 
                 <TextView
@@ -231,7 +231,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Худшее время прохождения дистанции:"/>
 
                 <TextView
@@ -240,7 +240,7 @@
                     android:layout_height="wrap_content"
                     android:text="Среднее время прохождения дистанции:"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"/>
+                    android:textColor="#0073B7"/>
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/FourHundrMetrsEstaGraph"
@@ -254,7 +254,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="#1c1c1c"
+            app:cardBackgroundColor="#F2F2F2"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -269,7 +269,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Подтягивание"
                     android:layout_gravity="center"
                     android:textStyle="bold"/>
@@ -279,7 +279,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Лучшее время прохождения дистанции:"/>
 
                 <TextView
@@ -287,7 +287,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Худшее время прохождения дистанции:"/>
 
                 <TextView
@@ -296,7 +296,7 @@
                     android:layout_height="wrap_content"
                     android:text="Среднее время прохождения дистанции:"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"/>
+                    android:textColor="#0073B7"/>
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/ThreeHundrMetrsEstaGraph"
@@ -310,7 +310,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="#1c1c1c"
+            app:cardBackgroundColor="#F2F2F2"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -325,7 +325,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Поднимание туловища лежа на спине"
                     android:layout_gravity="center"
                     android:textStyle="bold"/>
@@ -335,7 +335,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Лучшее время прохождения дистанции:"/>
 
                 <TextView
@@ -343,7 +343,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Худшее время прохождения дистанции:"/>
 
                 <TextView
@@ -352,7 +352,7 @@
                     android:layout_height="wrap_content"
                     android:text="Среднее время прохождения дистанции:"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"/>
+                    android:textColor="#0073B7"/>
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/TwoHundrMetrsEstaGraph"
@@ -366,7 +366,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="#1c1c1c"
+            app:cardBackgroundColor="#F2F2F2"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -381,7 +381,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Наклон вперед из положения стоя"
                     android:layout_gravity="center"
                     android:textStyle="bold"/>
@@ -391,7 +391,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Лучшее время прохождения дистанции:"/>
 
                 <TextView
@@ -399,7 +399,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Худшее время прохождения дистанции:"/>
 
                 <TextView
@@ -408,7 +408,7 @@
                     android:layout_height="wrap_content"
                     android:text="Среднее время прохождения дистанции:"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"/>
+                    android:textColor="#0073B7"/>
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/OneHundrMetrsEstaGraph"
@@ -422,7 +422,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="#1c1c1c"
+            app:cardBackgroundColor="#F2F2F2"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -437,7 +437,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Прыжок в длину с места"
                     android:layout_gravity="center"
                     android:textStyle="bold"/>
@@ -447,7 +447,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Лучшее время прохождения дистанции:"/>
 
                 <TextView
@@ -455,7 +455,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Худшее время прохождения дистанции:"/>
 
                 <TextView
@@ -464,7 +464,7 @@
                     android:layout_height="wrap_content"
                     android:text="Среднее время прохождения дистанции:"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"/>
+                    android:textColor="#0073B7"/>
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/JumpGraph"
@@ -478,7 +478,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="#1c1c1c"
+            app:cardBackgroundColor="#F2F2F2"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -493,7 +493,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Метание мяча в цель"
                     android:layout_gravity="center"
                     android:textStyle="bold"/>
@@ -503,7 +503,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Лучшее время прохождения дистанции:"/>
 
                 <TextView
@@ -511,7 +511,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Худшее время прохождения дистанции:"/>
 
                 <TextView
@@ -520,7 +520,7 @@
                     android:layout_height="wrap_content"
                     android:text="Среднее время прохождения дистанции:"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"/>
+                    android:textColor="#0073B7"/>
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/MetanBallGraph"

@@ -1,5 +1,6 @@
 package com.example.natksport.Stat;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -24,12 +25,11 @@ import java.util.List;
 
 public class StatGirevoiSport extends AppCompatActivity {
 
-    private TextView textViewName, textViewNumber, OneHundrMetrsText, textViewBestOneHundrMetrs, textViewWorstOneHundrMetrs,
-            textViewAverageOneHundrMetrs, FourHundrMetrsText, textViewBestFourHundrMetrs, textViewWorstFourHundrMetrs, textViewAverageFourHundrMetrs,
-            EightHundrMetrsText, textViewBestEightHundrMetrs, textViewWorstEightHundrMetrs, textViewAverageEightHundrMetrs, FourHundrMetrsEstaText,
+    private TextView textViewName, textViewNumber,  textViewBestOneHundrMetrs, textViewWorstOneHundrMetrs, textViewAverageOneHundrMetrs,
+            textViewBestFourHundrMetrs, textViewWorstFourHundrMetrs, textViewAverageFourHundrMetrs,
+             textViewBestEightHundrMetrs, textViewWorstEightHundrMetrs, textViewAverageEightHundrMetrs,
             textViewBestFourHundrMetrsEsta, textViewWorstFourHundrMetrsEsta, textViewAverageFourHundrMetrsEsta;
     private GraphView OneHundrMetrsGraph,FourHundrMetrsGraph,EightHundrMetrsGraph,FourHundrMetrsEstaGraph;
-    private List<Match> matchList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,19 +48,19 @@ public class StatGirevoiSport extends AppCompatActivity {
 
         textViewName = findViewById(R.id.textViewPlayerName);
         textViewNumber = findViewById(R.id.textViewPlayerNumber);
-        OneHundrMetrsText = findViewById(R.id.OneHundrMetrsText);
+
         textViewBestOneHundrMetrs = findViewById(R.id.textViewBestOneHundrMetrs);
         textViewWorstOneHundrMetrs = findViewById(R.id.textViewWorstOneHundrMetrs);
         textViewAverageOneHundrMetrs = findViewById(R.id.textViewAverageOneHundrMetrs);
-        FourHundrMetrsText = findViewById(R.id.FourHundrMetrsText);
+
         textViewBestFourHundrMetrs = findViewById(R.id.textViewBestFourHundrMetrs);
         textViewWorstFourHundrMetrs = findViewById(R.id.textViewWorstFourHundrMetrs);
         textViewAverageFourHundrMetrs = findViewById(R.id.textViewAverageFourHundrMetrs);
-        EightHundrMetrsText = findViewById(R.id.EightHundrMetrsText);
+
         textViewBestEightHundrMetrs = findViewById(R.id.textViewBestEightHundrMetrs);
         textViewWorstEightHundrMetrs = findViewById(R.id.textViewWorstEightHundrMetrs);
         textViewAverageEightHundrMetrs = findViewById(R.id.textViewAverageEightHundrMetrs);
-        FourHundrMetrsEstaText = findViewById(R.id.FourHundrMetrsEstaText);
+
         textViewBestFourHundrMetrsEsta = findViewById(R.id.textViewBestFourHundrMetrsEsta);
         textViewWorstFourHundrMetrsEsta = findViewById(R.id.textViewWorstFourHundrMetrsEsta);
         textViewAverageFourHundrMetrsEsta = findViewById(R.id.textViewAverageFourHundrMetrsEsta);
@@ -170,6 +170,10 @@ public class StatGirevoiSport extends AppCompatActivity {
 
         graph.getGridLabelRenderer().setNumHorizontalLabels(times.size());
         graph.getGridLabelRenderer().setVerticalAxisTitle("Количество повторений");
+
+        graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
+        graph.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
 
 }

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#353433">
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,20 +17,20 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="#FFA500"/>
+            android:textColor="#1E2A45"/>
 
         <TextView
             android:id="@+id/textViewPlayerNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:textColor="#FFA500"/>
+            android:textColor="#1E2A45"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="#1c1c1c"
+            app:cardBackgroundColor="#F2F2F2"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -45,7 +45,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Рывок гири 24кг"
                     android:layout_gravity="center"
                     android:textStyle="bold"/>
@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Наибольшее количество повторений:"/>
 
                 <TextView
@@ -63,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Наименьшее количество повторений:"/>
 
                 <TextView
@@ -72,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:text="Средний показатель количества повторений:"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"/>
+                    android:textColor="#0073B7"/>
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/OneHundrMetrsGraph"
@@ -86,7 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="#1c1c1c"
+            app:cardBackgroundColor="#F2F2F2"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -101,7 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Рывок гири 32кг"
                     android:layout_gravity="center"
                     android:textStyle="bold"/>
@@ -111,7 +111,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Наибольшее количество повторений:"/>
 
                 <TextView
@@ -119,7 +119,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Наименьшее количество повторений:"/>
 
                 <TextView
@@ -128,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:text="Средний показатель количества повторений:"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"/>
+                    android:textColor="#0073B7"/>
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/FourHundrMetrsGraph"
@@ -142,7 +142,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="#1c1c1c"
+            app:cardBackgroundColor="#F2F2F2"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -157,7 +157,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Толчок 24кг"
                     android:layout_gravity="center"
                     android:textStyle="bold"/>
@@ -167,7 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Наибольшее количество повторений:"/>
 
                 <TextView
@@ -175,7 +175,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Наименьшее количество повторений:"/>
 
                 <TextView
@@ -184,7 +184,7 @@
                     android:layout_height="wrap_content"
                     android:text="Средний показатель количества повторений:"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"/>
+                    android:textColor="#0073B7"/>
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/EightHundrMetrsGraph"
@@ -198,7 +198,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="#1c1c1c"
+            app:cardBackgroundColor="#F2F2F2"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -213,7 +213,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Толчок 32кг"
                     android:layout_gravity="center"
                     android:textStyle="bold"/>
@@ -223,7 +223,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Наибольшее количество повторений:"/>
 
                 <TextView
@@ -231,7 +231,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"
+                    android:textColor="#0073B7"
                     android:text="Наименьшее количество повторений:"/>
 
                 <TextView
@@ -240,7 +240,7 @@
                     android:layout_height="wrap_content"
                     android:text="Средний показатель количества повторений:"
                     android:textSize="18sp"
-                    android:textColor="#FFA500"/>
+                    android:textColor="#0073B7"/>
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/FourHundrMetrsEstaGraph"
