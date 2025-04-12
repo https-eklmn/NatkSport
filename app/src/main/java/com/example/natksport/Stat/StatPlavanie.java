@@ -141,6 +141,7 @@ public class StatPlavanie extends AppCompatActivity {
 
         graph.getGridLabelRenderer().setNumHorizontalLabels(times.size());
         graph.getGridLabelRenderer().setVerticalAxisTitle("Время в секундах");
+        graph.getGridLabelRenderer().setVerticalAxisTitleColor(Color.BLACK);
 
         graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
         graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);

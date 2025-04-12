@@ -213,6 +213,7 @@ public class StatPoliatlon extends AppCompatActivity {
 
         graph.getGridLabelRenderer().setNumHorizontalLabels(times.size());
         graph.getGridLabelRenderer().setVerticalAxisTitle("Время в секундах");
+        graph.getGridLabelRenderer().setVerticalAxisTitleColor(Color.BLACK);
 
         graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
         graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
@@ -238,6 +239,7 @@ public class StatPoliatlon extends AppCompatActivity {
 
         graph.getGridLabelRenderer().setNumHorizontalLabels(counts.size());
         graph.getGridLabelRenderer().setVerticalAxisTitle("Количество повторений");
+        graph.getGridLabelRenderer().setVerticalAxisTitleColor(Color.BLACK);
 
         graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
         graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
@@ -263,6 +265,7 @@ public class StatPoliatlon extends AppCompatActivity {
 
         graph.getGridLabelRenderer().setNumHorizontalLabels(scores.size());
         graph.getGridLabelRenderer().setVerticalAxisTitle("Количество очков");
+        graph.getGridLabelRenderer().setVerticalAxisTitleColor(Color.BLACK);
 
         graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
         graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);

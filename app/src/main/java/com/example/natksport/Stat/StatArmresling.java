@@ -343,6 +343,7 @@ public class StatArmresling extends AppCompatActivity {
         graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
         graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
         graph.getGridLabelRenderer().setGridColor(Color.BLACK);
+        graph.getGridLabelRenderer().setVerticalAxisTitleColor(Color.BLACK);
     }
 
     private void addDataToThreePointsGraph(List<Integer> threePointsPercentages) {
@@ -362,6 +363,7 @@ public class StatArmresling extends AppCompatActivity {
         graphThreePoints.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
         graphThreePoints.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
         graphThreePoints.getGridLabelRenderer().setGridColor(Color.BLACK);
+        graphThreePoints.getGridLabelRenderer().setVerticalAxisTitleColor(Color.BLACK);
     }
 
 }

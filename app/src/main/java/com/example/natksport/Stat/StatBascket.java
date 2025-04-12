@@ -460,6 +460,7 @@ public class StatBascket extends AppCompatActivity {
         graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
         graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
         graph.getGridLabelRenderer().setGridColor(Color.BLACK);
+        graph.getGridLabelRenderer().setVerticalAxisTitleColor(Color.BLACK);
     }
 
     private void addDataToThreePointsGraph(List<Integer> threePointsPercentages) {
@@ -479,6 +480,7 @@ public class StatBascket extends AppCompatActivity {
         graphThreePoints.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
         graphThreePoints.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
         graphThreePoints.getGridLabelRenderer().setGridColor(Color.BLACK);
+        graphThreePoints.getGridLabelRenderer().setVerticalAxisTitleColor(Color.BLACK);
     }
 
     private void addDataToFreeThrowsGraph(List<Integer> freeThrowsPercentages) {
@@ -498,5 +500,6 @@ public class StatBascket extends AppCompatActivity {
         graphFreeThrows.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
         graphFreeThrows.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
         graphFreeThrows.getGridLabelRenderer().setGridColor(Color.BLACK);
+        graphFreeThrows.getGridLabelRenderer().setVerticalAxisTitleColor(Color.BLACK);
     }
 }

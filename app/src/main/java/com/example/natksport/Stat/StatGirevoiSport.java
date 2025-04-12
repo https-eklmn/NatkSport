@@ -170,10 +170,12 @@ public class StatGirevoiSport extends AppCompatActivity {
 
         graph.getGridLabelRenderer().setNumHorizontalLabels(times.size());
         graph.getGridLabelRenderer().setVerticalAxisTitle("Количество повторений");
+        graph.getGridLabelRenderer().setVerticalAxisTitleColor(Color.BLACK);
 
         graph.getGridLabelRenderer().setVerticalLabelsColor(Color.BLACK);
         graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
         graph.getGridLabelRenderer().setGridColor(Color.BLACK);
+
     }
 
 }
