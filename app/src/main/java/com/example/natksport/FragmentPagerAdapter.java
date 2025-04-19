@@ -7,29 +7,54 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class FragmentPagerAdapter extends FragmentStateAdapter {
 
-    public FragmentPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+    private final String userRole;
+
+    public FragmentPagerAdapter(@NonNull FragmentActivity fragmentActivity, String userRole) {
         super(fragmentActivity);
+        this.userRole = userRole;
     }
 
     @NonNull
     @Override
     public Fragment createFragment(int position) {
+        Fragment fragment;
+
         switch (position) {
             case 0:
-                return new NewsFragment();
+                fragment = new NewsFragment();
+                break;
             case 1:
-                return new PlayersFragment();
+                PlayersFragment playersFragment = new PlayersFragment();
+                playersFragment.setUserRole(userRole);
+                fragment = playersFragment;
+
+                break;
             //case 2:
-            //    return new CoachesFragment();
+                //fragment = new CoachesFragment();
+              //  break;
             case 3:
-                return new UsersFragment();
+                if ("Администратор".equals(userRole)) {
+                    fragment = new UsersFragment();
+                } else {
+
+                    fragment = new NewsFragment();
+                }
+                break;
             default:
-                return new NewsFragment();
+                fragment = new NewsFragment();
+                break;
         }
+
+        if (fragment instanceof RoleAwareFragment) {
+            ((RoleAwareFragment) fragment).setUserRole(userRole);
+        }
+
+        return fragment;
     }
 
     @Override
     public int getItemCount() {
-        return 4;
+
+        return "Администратор".equals(userRole) ? 4 : 3;
     }
 }

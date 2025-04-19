@@ -24,10 +24,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
     private Context context;
     private List<Post> newsList;
+    private String userRole;
 
-    public NewsAdapter(Context context, List<Post> newsList) {
+    public NewsAdapter(Context context, List<Post> newsList, String userRole) {
         this.context = context;
         this.newsList = newsList;
+        this.userRole = userRole;
     }
 
     @NonNull
@@ -44,15 +46,24 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.imageView.setImageBitmap(decodeBase64(news.getImageBase64()));
         holder.dateTextView.setText(news.getDate());
 
-        // Обработчик для кнопки "Редактировать"
-        holder.itemView.findViewById(R.id.button_edit).setOnClickListener(v -> {
-            showEditDialog(news);
-        });
 
-        // Обработчик для кнопки "Удалить"
-        holder.itemView.findViewById(R.id.button_delete).setOnClickListener(v -> {
-            deletePost(news.getId());
-        });
+        if ("Пользователь".equals(userRole)) {
+            holder.itemView.findViewById(R.id.button_edit).setVisibility(View.GONE);
+            holder.itemView.findViewById(R.id.button_delete).setVisibility(View.GONE);
+        } else {
+            holder.itemView.findViewById(R.id.button_edit).setVisibility(View.VISIBLE);
+            holder.itemView.findViewById(R.id.button_delete).setVisibility(View.VISIBLE);
+
+
+            holder.itemView.findViewById(R.id.button_edit).setOnClickListener(v -> showEditDialog(news));
+
+            holder.itemView.findViewById(R.id.button_delete).setOnClickListener(v -> deletePost(news.getId()));
+        }
+    }
+
+    public void setUserRole(String userRole) {
+        this.userRole = userRole;
+        notifyDataSetChanged();
     }
 
     private void showEditDialog(Post post) {
@@ -82,13 +93,13 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     static class NewsViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView descriptionTextView;
-        TextView dateTextView; // Новое поле для даты
+        TextView dateTextView;
 
         public NewsViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.news_image);
             descriptionTextView = itemView.findViewById(R.id.news_description);
-            dateTextView = itemView.findViewById(R.id.news_date); // Инициализация new TextView для даты
+            dateTextView = itemView.findViewById(R.id.news_date);
         }
     }
 

@@ -39,15 +39,14 @@ public class MainActivity extends AppCompatActivity {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("User");
 
-
-
-
-
         SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         String savedUsername = sharedPreferences.getString(KEY_USERNAME, null);
+        String savedUserRole = sharedPreferences.getString("user_role", null);
+
         if (savedUsername != null) {
 
             Intent intent = new Intent(MainActivity.this, FragmentActivity.class);
+            intent.putExtra("user_role", savedUserRole);
             startActivity(intent);
             finish();
         }
@@ -67,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
     private void login() {
         final String username = usernameEditText.getText().toString();
         final String password = passwordEditText.getText().toString();
@@ -77,15 +77,19 @@ public class MainActivity extends AppCompatActivity {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                         String storedPassword = userSnapshot.child("parol").getValue(String.class);
+                        String role = userSnapshot.child("naimenovanieRoli").getValue(String.class);
+
                         if (storedPassword != null && storedPassword.equals(password)) {
                             Toast.makeText(MainActivity.this, "Вход выполнен", Toast.LENGTH_SHORT).show();
 
                             SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putString(KEY_USERNAME, username);
+                            editor.putString("user_role", role);
                             editor.apply();
 
                             Intent intent = new Intent(MainActivity.this, FragmentActivity.class);
+                            intent.putExtra("user_role", role);
                             startActivity(intent);
                             finish();
                             return;

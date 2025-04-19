@@ -55,13 +55,16 @@ public class PlayersFragment extends Fragment {
     private ArrayAdapter<String> sportsAdapter;
     private Spinner spinnerSportFilter;
     private ArrayAdapter<String> sportsFilterAdapter;
+    private String userRole;
 
+    public void setUserRole(String userRole) {
+        this.userRole = userRole;
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_players, container, false);
-
 
         buttonAddPlayer = view.findViewById(R.id.buttonAddPlayer);
         buttonStartMatch = view.findViewById(R.id.buttonStartMatch);
@@ -78,9 +81,9 @@ public class PlayersFragment extends Fragment {
         recyclerViewPlayers.setAdapter(playerAdapter);
 
         loadPlayers();
+        updateButtonVisibility();
 
         buttonAddPlayer.setOnClickListener(v -> addPlayer());
-
 
         buttonStartMatch.setOnClickListener(v -> {
             if (!matchStarted) {
@@ -89,6 +92,7 @@ public class PlayersFragment extends Fragment {
                 endMatch();
             }
         });
+
         spinnerSportFilter.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -97,10 +101,19 @@ public class PlayersFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // Не делать ничего
             }
         });
         return view;
+    }
+
+    private void updateButtonVisibility() {
+        if ("Пользователь".equals(userRole)) {
+            buttonAddPlayer.setVisibility(View.GONE);
+            buttonStartMatch.setVisibility(View.GONE);
+        } else {
+            buttonAddPlayer.setVisibility(View.VISIBLE);
+            buttonStartMatch.setVisibility(View.VISIBLE);
+        }
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -260,9 +273,9 @@ public class PlayersFragment extends Fragment {
 
             String position;
             if (selectedSportPosition == 0) {
-                position = "0"; // Если вид спорта не выбран
+                position = "0";
             } else if (spinnerPosition.getVisibility() == View.GONE) {
-                position = "0"; // Если выбран вид спорта без позиций
+                position = "0";
             } else {
                 position = spinnerPosition.getSelectedItem().toString();
             }
@@ -379,21 +392,17 @@ public class PlayersFragment extends Fragment {
     }
 
     private void startMatch() {
-        // Инициализация AlertDialog
+
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Описание матча");
 
-        // Создаем EditText для описания матча
         final EditText input = new EditText(getActivity());
         builder.setView(input);
 
-        // Создаём Spinner для выбора вида спорта
         Spinner sportSpinner = new Spinner(getActivity());
 
-        // Загружаем виды спорта в Spinner
-        loadSportsAndPositions(sportSpinner); // Загружаем виды спорта здесь
+        loadSportsAndPositions(sportSpinner);
 
-        // Создание LinearLayout
         LinearLayout layout = new LinearLayout(getActivity());
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.addView(input);
@@ -409,13 +418,11 @@ public class PlayersFragment extends Fragment {
                 return;
             }
 
-            // Проверяем правильно ли выбран вид спорта
             if (selectedSportPosition == 0) {
                 Toast.makeText(getActivity(), "Пожалуйста, выберите вид спорта", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            // Используем selectedSportPosition как есть
             int selectedSportId = sportList.get(selectedSportPosition).getIDVidaSporta();
 
             String matchId = generateTenDigitId();

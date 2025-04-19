@@ -22,33 +22,32 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewsFragment extends Fragment {
+public class NewsFragment extends Fragment implements RoleAwareFragment {
 
     private DatabaseReference databaseReference;
     private RecyclerView recyclerView;
     private NewsAdapter newsAdapter;
     private List<Post> newsList;
+    private String userRole;
 
     public NewsFragment() {
-
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_news, container, false);
-
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Novosti");
         recyclerView = view.findViewById(R.id.recycler_view_news);
         newsList = new ArrayList<>();
-        newsAdapter = new NewsAdapter(getActivity(), newsList);
+        newsAdapter = new NewsAdapter(getActivity(), newsList, userRole);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(newsAdapter);
 
         loadNews();
+
 
         Button addButton = view.findViewById(R.id.button_add_news);
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +58,17 @@ public class NewsFragment extends Fragment {
             }
         });
 
+        updateButtonVisibility(addButton);
+
         return view;
+    }
+
+    private void updateButtonVisibility(Button addButton) {
+        if ("Пользователь".equals(userRole)) {
+            addButton.setVisibility(View.GONE);
+        } else {
+            addButton.setVisibility(View.VISIBLE);
+        }
     }
 
     private void loadNews() {
@@ -81,5 +90,10 @@ public class NewsFragment extends Fragment {
                 Toast.makeText(getActivity(), "Ошибка загрузки новостей", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void setUserRole(String role) {
+        this.userRole = role;
     }
 }
