@@ -29,7 +29,7 @@ public class CoachesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_coaches, container, false);
 
-        recyclerView = view.findViewById(R.id.recycler_view_coaches);
+        recyclerView = view.findViewById(R.id.recycler_view_coache);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         coachList = new ArrayList<>();
@@ -48,8 +48,8 @@ public class CoachesFragment extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 coachList.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Coach coach = snapshot.getValue(Coach.class);
-                    coachList.add(coach);
+                    Coach coac = snapshot.getValue(Coach.class);
+                    coachList.add(coac);
                 }
                 coachesAdapter.notifyDataSetChanged();
             }

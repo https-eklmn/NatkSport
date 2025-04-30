@@ -6,7 +6,7 @@
     tools:context=".CoachesFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_coaches"
+        android:id="@+id/recycler_view_coache"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </FrameLayout>

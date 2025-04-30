@@ -46,8 +46,8 @@ public class CoachesAdapter extends RecyclerView.Adapter<CoachesAdapter.ViewHold
         holder.textViewFIO.setText(coach.getFIO());
 
         // Получаем описание и заменяем два пробела на два переноса строки
-        String opisanie = coach.getOpisanie().replace("  ", "\n\n");
-        holder.textViewOpisanie.setText(opisanie);
+        String opisani = coach.getOpisanie().replace("  ", "\n\n");
+        holder.textViewOpisanie.setText(opisani);
 
         // Условие для установки изображения
         if (coach.getImage() != null && !coach.getImage().isEmpty()) {

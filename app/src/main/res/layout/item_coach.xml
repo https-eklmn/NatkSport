@@ -33,7 +33,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="#0073B7"
-                android:layout_margin="5dp"
+                android:layout_margin="6dp"
                 android:layout_toEndOf="@id/image_view_coach"
                 android:layout_alignBaseline="@id/image_view_coach" />
         </RelativeLayout>

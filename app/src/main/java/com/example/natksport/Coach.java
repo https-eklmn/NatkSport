@@ -19,7 +19,7 @@ public class Coach {
 
 
     public String getFIO() { return FIO; }
-    public int getIDTrener() { return IDTrener; }
+    public int getIDTrene() { return IDTrener; }
     public String getImage() { return Image; }
     public String getOpisanie() { return Opisanie; }
 }

@@ -7,11 +7,11 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class FragmentPagerAdapter extends FragmentStateAdapter {
 
-    private final String userRole;
+    private final String userRol;
 
     public FragmentPagerAdapter(@NonNull FragmentActivity fragmentActivity, String userRole) {
         super(fragmentActivity);
-        this.userRole = userRole;
+        this.userRol = userRole;
     }
 
     @NonNull
@@ -25,7 +25,7 @@ public class FragmentPagerAdapter extends FragmentStateAdapter {
                 break;
             case 1:
                 PlayersFragment playersFragment = new PlayersFragment();
-                playersFragment.setUserRole(userRole);
+                playersFragment.setUserRole(userRol);
                 fragment = playersFragment;
 
                 break;
@@ -33,7 +33,7 @@ public class FragmentPagerAdapter extends FragmentStateAdapter {
                 fragment = new CoachesFragment();
                 break;
             case 3:
-                if ("Администратор".equals(userRole)) {
+                if ("Администратор".equals(userRol)) {
                     fragment = new UsersFragment();
                 } else {
 
@@ -46,7 +46,7 @@ public class FragmentPagerAdapter extends FragmentStateAdapter {
         }
 
         if (fragment instanceof RoleAwareFragment) {
-            ((RoleAwareFragment) fragment).setUserRole(userRole);
+            ((RoleAwareFragment) fragment).setUserRole(userRol);
         }
 
         return fragment;
@@ -55,6 +55,6 @@ public class FragmentPagerAdapter extends FragmentStateAdapter {
     @Override
     public int getItemCount() {
 
-        return "Администратор".equals(userRole) ? 4 : 3;
+        return "Администратор".equals(userRol) ? 4 : 3;
     }
 }
