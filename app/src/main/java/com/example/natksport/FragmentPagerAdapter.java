@@ -29,9 +29,9 @@ public class FragmentPagerAdapter extends FragmentStateAdapter {
                 fragment = playersFragment;
 
                 break;
-            //case 2:
-                //fragment = new CoachesFragment();
-              //  break;
+            case 2:
+                fragment = new CoachesFragment();
+                break;
             case 3:
                 if ("Администратор".equals(userRole)) {
                     fragment = new UsersFragment();

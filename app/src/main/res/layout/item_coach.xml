@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="8dp"
+    app:cardBackgroundColor="#F2F2F2"
+    app:cardCornerRadius="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image_view_coach"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/text_view_fio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#0073B7"
+                android:layout_margin="5dp"
+                android:layout_toEndOf="@id/image_view_coach"
+                android:layout_alignBaseline="@id/image_view_coach" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text_view_opisanie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#0073B7"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
