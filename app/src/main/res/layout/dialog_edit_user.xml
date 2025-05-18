@@ -85,7 +85,10 @@
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
             android:backgroundTint="#1E2A45"
-            android:text="Отмена"/>
+            android:text="Отмена"
+            android:drawableLeft="@drawable/cancel"
+            android:drawablePadding="8dp"
+            android:layout_marginEnd="8dp"/>
         <Button
             android:id="@+id/buttonSave"
             android:layout_width="0dp"

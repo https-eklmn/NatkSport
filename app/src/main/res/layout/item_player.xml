@@ -32,7 +32,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 android:background="@null"
-                android:src="@drawable/logo"
+                android:src="@drawable/quest"
                 android:contentDescription="Дополнительная информация"
                 android:padding="8dp"/>
 

@@ -56,27 +56,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_gravity="bottom">
 
         <Button
             android:id="@+id/buttonDelete"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:textColor="#FFFFFF"
             android:backgroundTint="#1E2A45"
-            android:textSize="11sp"
-            android:text="Удалить" />
+            android:textSize="14sp"
+            android:text="Удалить"
+            android:drawableLeft="@drawable/delete"
+            android:drawablePadding="8dp"
+            android:layout_marginBottom="8dp"/>
 
         <Button
             android:id="@+id/buttonEdit"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:textColor="#FFFFFF"
             android:backgroundTint="#0073B7"
-            android:textSize="11sp"
-            android:text="Редактировать" />
+            android:textSize="14sp"
+            android:text="Редактировать"
+            android:drawableLeft="@drawable/edit"
+            android:drawablePadding="8dp"/>
     </LinearLayout>
 </LinearLayout>
