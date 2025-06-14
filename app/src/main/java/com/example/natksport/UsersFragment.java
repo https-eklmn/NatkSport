@@ -112,7 +112,7 @@ public class UsersFragment extends Fragment implements UserAdapter.OnUserClickLi
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
-                // do nothing
+
             }
         });
     }

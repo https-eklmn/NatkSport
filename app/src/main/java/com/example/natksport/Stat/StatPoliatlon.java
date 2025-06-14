@@ -74,16 +74,16 @@ public class StatPoliatlon extends AppCompatActivity {
         databaseRuns.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                List<Integer> hundredMeterTimes = new ArrayList<>();
-                List<Integer> fourHundredMeterTimes = new ArrayList<>();
-                List<Integer> eightHundredMeterTimes = new ArrayList<>();
-                List<Integer> fourHundredRelayTimes = new ArrayList<>();
-                List<Integer> threeHundredRelayTimes = new ArrayList<>();
+                List<Double> hundredMeterTimes = new ArrayList<>();
+                List<Double> fourHundredMeterTimes = new ArrayList<>();
+                List<Double> eightHundredMeterTimes = new ArrayList<>();
+                List<Double> fourHundredRelayTimes = new ArrayList<>();
+                List<Double> threeHundredRelayTimes = new ArrayList<>();
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     ActionLog action = snapshot.getValue(ActionLog.class);
                     if (action != null && action.getPlayerId().equals(playerId)) {
-                        int time = Integer.parseInt(action.getopisanie());
+                        double time = Double.parseDouble(action.getopisanie());
                         switch (action.getAction()) {
                             case "Забег на лыжах 3км":
                                 hundredMeterTimes.add(time);
@@ -118,8 +118,8 @@ public class StatPoliatlon extends AppCompatActivity {
         });
     }
 
-    private void updateStatisticsDisplay(List<Integer> hundred, List<Integer> fourHundred, List<Integer> eightHundred,
-                                         List<Integer> fourHundredRelay, List<Integer> threeHundredRelay) {
+    private void updateStatisticsDisplay(List<Double> hundred, List<Double> fourHundred, List<Double> eightHundred,
+                                         List<Double> fourHundredRelay, List<Double> threeHundredRelay) {
         updateDisplayForDistance(textViewBestOneHundrMetrs, textViewWorstOneHundrMetrs, textViewAverageOneHundrMetrs,  hundred);
         updateDisplayForDistance(textViewBestFourHundrMetrs, textViewWorstFourHundrMetrs, textViewAverageFourHundrMetrs,  fourHundred);
 
@@ -130,7 +130,7 @@ public class StatPoliatlon extends AppCompatActivity {
 
     }
 
-    private void updateDisplayForDistance( TextView bestText, TextView worstText, TextView averageText, List<Integer> times) {
+    private void updateDisplayForDistance( TextView bestText, TextView worstText, TextView averageText, List<Double> times) {
         if (times.isEmpty()) {
             bestText.setText("Лучшее время: нет данных");
             worstText.setText("Худшее время: нет данных");
@@ -138,16 +138,16 @@ public class StatPoliatlon extends AppCompatActivity {
             return;
         }
 
-        int bestTime = Collections.min(times);
-        int worstTime = Collections.max(times);
-        double averageTime = times.stream().mapToInt(Integer::intValue).average().orElse(0.0);
+        double bestTime = Collections.min(times);
+        double worstTime = Collections.max(times);
+        double averageTime = times.stream().mapToDouble(Double::doubleValue).average().orElse(0.0);
 
         bestText.setText("Лучшее время: " + bestTime + " секунд");
         worstText.setText("Худшее время: " + worstTime + " секунд");
         averageText.setText("Среднее время: " + String.format("%.2f", averageTime) + " секунд");
     }
 
-    private void updateDisplayForRepsOrScores(TextView bestText, TextView worstText, TextView averageText, List<Integer> counts) {
+    private void updateDisplayForRepsOrScores(TextView bestText, TextView worstText, TextView averageText, List<Double> counts) {
         if (counts.isEmpty()) {
             bestText.setText("Лучшее значение: нет данных");
             worstText.setText("Худшее значение: нет данных");
@@ -155,16 +155,16 @@ public class StatPoliatlon extends AppCompatActivity {
             return;
         }
 
-        int bestCount = Collections.max(counts);
-        int worstCount = Collections.min(counts);
-        double averageCount = counts.stream().mapToInt(Integer::intValue).average().orElse(0.0);
+        double bestCount = Collections.max(counts);
+        double worstCount = Collections.min(counts);
+        double averageCount = counts.stream().mapToDouble(Double::doubleValue).average().orElse(0.0);
 
         bestText.setText("Лучшее значение: " + bestCount + " повторений");
         worstText.setText("Худшее значение: " + worstCount + " повторений");
         averageText.setText("Среднее значение: " + String.format("%.2f", averageCount) + " повторений");
     }
 
-    private void updateDisplayForShootingScore(TextView bestText, TextView worstText, TextView averageText, List<Integer> scores) {
+    private void updateDisplayForShootingScore(TextView bestText, TextView worstText, TextView averageText, List<Double> scores) {
         if (scores.isEmpty()) {
             bestText.setText("Лучший результат: нет данных");
             worstText.setText("Худший результат: нет данных");
@@ -172,17 +172,17 @@ public class StatPoliatlon extends AppCompatActivity {
             return;
         }
 
-        int bestScore = Collections.max(scores);
-        int worstScore = Collections.min(scores);
-        double averageScore = scores.stream().mapToInt(Integer::intValue).average().orElse(0.0);
+        double bestScore = Collections.max(scores);
+        double worstScore = Collections.min(scores);
+        double averageScore = scores.stream().mapToDouble(Double::doubleValue).average().orElse(0.0);
 
         bestText.setText("Лучший результат: " + bestScore + " очков");
         worstText.setText("Худший результат: " + worstScore + " очков");
         averageText.setText("Средний результат: " + String.format("%.2f", averageScore) + " очков");
     }
 
-    private void updateGraphs(List<Integer> hundred, List<Integer> fourHundred, List<Integer> eightHundred,
-                              List<Integer> fourHundredRelay, List<Integer> threeHundredRelay) {
+    private void updateGraphs(List<Double> hundred, List<Double> fourHundred, List<Double> eightHundred,
+                              List<Double> fourHundredRelay, List<Double> threeHundredRelay) {
 
         setupGraph(OneHundrMetrsGraph, hundred);
         setupGraph(FourHundrMetrsGraph, fourHundred);
@@ -194,7 +194,7 @@ public class StatPoliatlon extends AppCompatActivity {
 
     }
 
-    private void setupGraph(GraphView graph, List<Integer> times) {
+    private void setupGraph(GraphView graph, List<Double> times) {
         if (times.isEmpty()) {
             graph.removeAllSeries();
             return;
@@ -220,7 +220,7 @@ public class StatPoliatlon extends AppCompatActivity {
         graph.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
 
-    private void setupGraphForRepsOrScores(GraphView graph, List<Integer> counts) {
+    private void setupGraphForRepsOrScores(GraphView graph, List<Double> counts) {
         if (counts.isEmpty()) {
             graph.removeAllSeries();
             return;
@@ -246,7 +246,7 @@ public class StatPoliatlon extends AppCompatActivity {
         graph.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
 
-    private void setupGraphForShootingScore(GraphView graph, List<Integer> scores) {
+    private void setupGraphForShootingScore(GraphView graph, List<Double> scores) {
         if (scores.isEmpty()) {
             graph.removeAllSeries();
             return;

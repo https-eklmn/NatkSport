@@ -56,7 +56,7 @@ public class CoachesFragment extends Fragment {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // Handle possible errors.
+
             }
         });
     }

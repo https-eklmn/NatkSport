@@ -28,7 +28,7 @@ public class StatPlavanie extends AppCompatActivity {
             textViewBestOneHundrMetrs, textViewWorstOneHundrMetrs, textViewAverageOneHundrMetrs,
             textViewBestFourHundrMetrs, textViewWorstFourHundrMetrs, textViewAverageFourHundrMetrs;
     private GraphView OneHundrMetrsGraph,FourHundrMetrsGraph;
-    private List<Match> matchList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,14 +65,14 @@ public class StatPlavanie extends AppCompatActivity {
         databaseRuns.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                List<Integer> hundredMeterTimes = new ArrayList<>();
-                List<Integer> fourHundredMeterTimes = new ArrayList<>();
+                List<Double> hundredMeterTimes = new ArrayList<>();
+                List<Double> fourHundredMeterTimes = new ArrayList<>();
 
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     ActionLog action = snapshot.getValue(ActionLog.class);
                     if (action != null && action.getPlayerId().equals(playerId)) {
-                        int time = Integer.parseInt(action.getopisanie());
+                        double time = Double.parseDouble(action.getopisanie());
                         switch (action.getAction()) {
                             case "Заплыв на 50м":
                                 hundredMeterTimes.add(time);
@@ -93,12 +93,12 @@ public class StatPlavanie extends AppCompatActivity {
             }
         });
     }
-    private void updateStatisticsDisplay(List<Integer> hundred, List<Integer> fourHundred) {
+    private void updateStatisticsDisplay(List<Double> hundred, List<Double> fourHundred) {
         updateDisplayForDistance(textViewBestOneHundrMetrs, textViewWorstOneHundrMetrs, textViewAverageOneHundrMetrs,  hundred);
         updateDisplayForDistance(textViewBestFourHundrMetrs, textViewWorstFourHundrMetrs, textViewAverageFourHundrMetrs,  fourHundred);
     }
 
-    private void updateDisplayForDistance( TextView bestText, TextView worstText, TextView averageText, List<Integer> times) {
+    private void updateDisplayForDistance( TextView bestText, TextView worstText, TextView averageText, List<Double> times) {
         if (times.isEmpty()) {
             bestText.setText("Лучшее время: нет данных");
             worstText.setText("Худшее время: нет данных");
@@ -106,23 +106,21 @@ public class StatPlavanie extends AppCompatActivity {
             return;
         }
 
-        int bestTime = Collections.min(times);
-        int worstTime = Collections.max(times);
-        double averageTime = times.stream().mapToInt(Integer::intValue).average().orElse(0.0);
+        double bestTime = Collections.min(times);
+        double worstTime = Collections.max(times);
+        double averageTime = times.stream().mapToDouble(Double::doubleValue).average().orElse(0.0);
 
         bestText.setText("Лучшее время: " + bestTime + " секунд");
         worstText.setText("Худшее время: " + worstTime + " секунд");
         averageText.setText("Среднее время: " + String.format("%.2f", averageTime) + " секунд");
     }
-    private void updateGraphs(List<Integer> hundred, List<Integer> fourHundred) {
+    private void updateGraphs(List<Double> hundred, List<Double> fourHundred) {
 
         setupGraph(OneHundrMetrsGraph, hundred);
         setupGraph(FourHundrMetrsGraph, fourHundred);
-
-
     }
 
-    private void setupGraph(GraphView graph, List<Integer> times) {
+    private void setupGraph(GraphView graph, List<Double> times) {
         if (times.isEmpty()) {
             graph.removeAllSeries();
             return;

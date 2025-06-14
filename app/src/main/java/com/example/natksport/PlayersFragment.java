@@ -139,13 +139,13 @@ public class PlayersFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 List<String> sportNames = new ArrayList<>();
-                sportNames.add("Все виды спорта"); // Добавим опцию для всех игроков
-                sportList.clear(); // Очистим список перед загрузкой
+                sportNames.add("Все виды спорта");
+                sportList.clear();
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     VidSport sport = snapshot.getValue(VidSport.class);
                     if (sport != null) {
-                        sportList.add(sport); // Сохраняем вид спорта в sportList
+                        sportList.add(sport);
                         sportNames.add(sport.getNaimenovanie());
                     }
                 }

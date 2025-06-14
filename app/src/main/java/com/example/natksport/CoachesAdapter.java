@@ -45,16 +45,13 @@ public class CoachesAdapter extends RecyclerView.Adapter<CoachesAdapter.ViewHold
         Coach coach = coachList.get(position);
         holder.textViewFIO.setText(coach.getFIO());
 
-        // Получаем описание и заменяем два пробела на два переноса строки
         String opisani = coach.getOpisanie().replace("  ", "\n\n");
         holder.textViewOpisanie.setText(opisani);
 
-        // Условие для установки изображения
         if (coach.getImage() != null && !coach.getImage().isEmpty()) {
             Bitmap bitmap = decodeBase64(coach.getImage());
             holder.imageViewCoach.setImageBitmap(bitmap);
         } else {
-            // Установка дефолтного изображения, если поле пустое
             holder.imageViewCoach.setImageResource(R.drawable.logo);
         }
     }

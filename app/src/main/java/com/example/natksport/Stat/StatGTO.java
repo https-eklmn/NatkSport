@@ -95,20 +95,20 @@ public class StatGTO extends AppCompatActivity {
         databaseRuns.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                List<Integer> hundredMeterTimes = new ArrayList<>();
-                List<Integer> fourHundredMeterTimes = new ArrayList<>();
-                List<Integer> eightHundredMeterTimes = new ArrayList<>();
-                List<Integer> fourHundredRelayTimes = new ArrayList<>();
-                List<Integer> threeHundredRelayTimes = new ArrayList<>();
-                List<Integer> twoHundredRelayTimes = new ArrayList<>();
-                List<Integer> oneHundredRelayTimes = new ArrayList<>();
-                List<Integer> Jump = new ArrayList<>();
-                List<Integer> MetanBall = new ArrayList<>();
+                List<Double> hundredMeterTimes = new ArrayList<>();
+                List<Double> fourHundredMeterTimes = new ArrayList<>();
+                List<Double> eightHundredMeterTimes = new ArrayList<>();
+                List<Double> fourHundredRelayTimes = new ArrayList<>();
+                List<Double> threeHundredRelayTimes = new ArrayList<>();
+                List<Double> twoHundredRelayTimes = new ArrayList<>();
+                List<Double> oneHundredRelayTimes = new ArrayList<>();
+                List<Double> Jump = new ArrayList<>();
+                List<Double> MetanBall = new ArrayList<>();
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     ActionLog action = snapshot.getValue(ActionLog.class);
                     if (action != null && action.getPlayerId().equals(playerId)) {
-                        int time = Integer.parseInt(action.getopisanie());
+                        double time = Double.parseDouble(action.getopisanie());
                         switch (action.getAction()) {
                             case "Забег на 60м":
                                 hundredMeterTimes.add(time);
@@ -154,10 +154,10 @@ public class StatGTO extends AppCompatActivity {
         });
     }
 
-    private void updateStatisticsDisplay(List<Integer> hundred, List<Integer> fourHundred, List<Integer> eightHundred,
-                                         List<Integer> fourHundredRelay, List<Integer> threeHundredRelay,
-                                         List<Integer> twoHundredRelay, List<Integer> oneHundredRelay,
-                                         List<Integer> JumpRelay, List<Integer> MetanBallRelay) {
+    private void updateStatisticsDisplay(List<Double> hundred, List<Double> fourHundred, List<Double> eightHundred,
+                                         List<Double> fourHundredRelay, List<Double> threeHundredRelay,
+                                         List<Double> twoHundredRelay, List<Double> oneHundredRelay,
+                                         List<Double> JumpRelay, List<Double> MetanBallRelay) {
         updateDisplayForDistanceTime(textViewBestOneHundrMetrs, textViewWorstOneHundrMetrs, textViewAverageOneHundrMetrs,  hundred);
         updateDisplayForDistanceTime(textViewBestFourHundrMetrs, textViewWorstFourHundrMetrs, textViewAverageFourHundrMetrs,  fourHundred);
         updateDisplayForDistanceTime(textViewBestEightHundrMetrs, textViewWorstEightHundrMetrs, textViewAverageEightHundrMetrs,  eightHundred);
@@ -171,7 +171,7 @@ public class StatGTO extends AppCompatActivity {
 
         updateDisplayForShootingScore(textViewBestMetanBall, textViewWorstMetanBall, textViewAverageMetanBall,  MetanBallRelay);
     }
-    private void updateDisplayForShootingScore(TextView bestText, TextView worstText, TextView averageText, List<Integer> scores) {
+    private void updateDisplayForShootingScore(TextView bestText, TextView worstText, TextView averageText, List<Double> scores) {
         if (scores.isEmpty()) {
             bestText.setText("Лучший результат: нет данных");
             worstText.setText("Худший результат: нет данных");
@@ -179,15 +179,15 @@ public class StatGTO extends AppCompatActivity {
             return;
         }
 
-        int bestScore = Collections.max(scores);
-        int worstScore = Collections.min(scores);
-        double averageScore = scores.stream().mapToInt(Integer::intValue).average().orElse(0.0);
+        double bestScore = Collections.max(scores);
+        double worstScore = Collections.min(scores);
+        double averageScore = scores.stream().mapToDouble(Double::doubleValue).average().orElse(0.0);
 
         bestText.setText("Лучший результат: " + bestScore + " очков");
         worstText.setText("Худший результат: " + worstScore + " очков");
         averageText.setText("Средний результат: " + String.format("%.2f", averageScore) + " очков");
     }
-    private void updateDisplayForDistanceTime( TextView bestText, TextView worstText, TextView averageText, List<Integer> times) {
+    private void updateDisplayForDistanceTime( TextView bestText, TextView worstText, TextView averageText, List<Double> times) {
         if (times.isEmpty()) {
             bestText.setText("Лучшее время: нет данных");
             worstText.setText("Худшее время: нет данных");
@@ -195,15 +195,15 @@ public class StatGTO extends AppCompatActivity {
             return;
         }
 
-        int bestTime = Collections.min(times);
-        int worstTime = Collections.max(times);
-        double averageTime = times.stream().mapToInt(Integer::intValue).average().orElse(0.0);
+        double bestTime = Collections.min(times);
+        double worstTime = Collections.max(times);
+        double averageTime = times.stream().mapToDouble(Double::doubleValue).average().orElse(0.0);
 
         bestText.setText("Лучшее время: " + bestTime + " секунд");
         worstText.setText("Худшее время: " + worstTime + " секунд");
         averageText.setText("Среднее время: " + String.format("%.2f", averageTime) + " секунд");
     }
-    private void updateDisplayForDistance( TextView bestText, TextView worstText, TextView averageText, List<Integer> times) {
+    private void updateDisplayForDistance( TextView bestText, TextView worstText, TextView averageText, List<Double> times) {
         if (times.isEmpty()) {
             bestText.setText("Лучшее длина: нет данных");
             worstText.setText("Худшее длина: нет данных");
@@ -211,15 +211,15 @@ public class StatGTO extends AppCompatActivity {
             return;
         }
 
-        int bestTime = Collections.min(times);
-        int worstTime = Collections.max(times);
-        double averageTime = times.stream().mapToInt(Integer::intValue).average().orElse(0.0);
+        double bestTime = Collections.min(times);
+        double worstTime = Collections.max(times);
+        double averageTime = times.stream().mapToDouble(Double::doubleValue).average().orElse(0.0);
 
         bestText.setText("Лучшее длина: " + bestTime + " сантиметров");
         worstText.setText("Худшее длина: " + worstTime + " сантиметров");
         averageText.setText("Средняя длина: " + String.format("%.1f", averageTime) + " сантиметров");
     }
-    private void updateDisplayForRepsOrScores(TextView bestText, TextView worstText, TextView averageText, List<Integer> counts) {
+    private void updateDisplayForRepsOrScores(TextView bestText, TextView worstText, TextView averageText, List<Double> counts) {
         if (counts.isEmpty()) {
             bestText.setText("Лучшее значение: нет данных");
             worstText.setText("Худшее значение: нет данных");
@@ -227,18 +227,18 @@ public class StatGTO extends AppCompatActivity {
             return;
         }
 
-        int bestCount = Collections.max(counts);
-        int worstCount = Collections.min(counts);
-        double averageCount = counts.stream().mapToInt(Integer::intValue).average().orElse(0.0);
+        double bestCount = Collections.max(counts);
+        double worstCount = Collections.min(counts);
+        double averageCount = counts.stream().mapToDouble(Double:: doubleValue).average().orElse(0.0);
 
         bestText.setText("Лучшее значение: " + bestCount + " повторений");
         worstText.setText("Худшее значение: " + worstCount + " повторений");
         averageText.setText("Среднее значение: " + String.format("%.2f", averageCount) + " повторений");
     }
-    private void updateGraphs(List<Integer> hundred, List<Integer> fourHundred, List<Integer> eightHundred,
-                              List<Integer> fourHundredRelay, List<Integer> threeHundredRelay,
-                              List<Integer> twoHundredRelay, List<Integer> oneHundredRelay,
-                              List<Integer> JumpRelay, List<Integer> MetanBallRelay) {
+    private void updateGraphs(List<Double> hundred, List<Double> fourHundred, List<Double> eightHundred,
+                              List<Double> fourHundredRelay, List<Double> threeHundredRelay,
+                              List<Double> twoHundredRelay, List<Double> oneHundredRelay,
+                              List<Double> JumpRelay, List<Double> MetanBallRelay) {
 
         setupGraph(OneHundrMetrsGraph, hundred);
         setupGraph(FourHundrMetrsGraph, fourHundred);
@@ -254,7 +254,7 @@ public class StatGTO extends AppCompatActivity {
         setupGraphS(MetanBallGraph, MetanBallRelay);
     }
 
-    private void setupGraph(GraphView graph, List<Integer> times) {
+    private void setupGraph(GraphView graph, List<Double> times) {
         if (times.isEmpty()) {
             graph.removeAllSeries();
             return;
@@ -279,7 +279,7 @@ public class StatGTO extends AppCompatActivity {
         graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
         graph.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
-    private void setupGraphD(GraphView graph, List<Integer> times) {
+    private void setupGraphD(GraphView graph, List<Double> times) {
         if (times.isEmpty()) {
             graph.removeAllSeries();
             return;
@@ -304,7 +304,7 @@ public class StatGTO extends AppCompatActivity {
         graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
         graph.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
-    private void setupGraphS(GraphView graph, List<Integer> times) {
+    private void setupGraphS(GraphView graph, List<Double> times) {
         if (times.isEmpty()) {
             graph.removeAllSeries();
             return;
@@ -329,7 +329,7 @@ public class StatGTO extends AppCompatActivity {
         graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.BLACK);
         graph.getGridLabelRenderer().setGridColor(Color.BLACK);
     }
-    private void setupGraphP(GraphView graph, List<Integer> times) {
+    private void setupGraphP(GraphView graph, List<Double> times) {
         if (times.isEmpty()) {
             graph.removeAllSeries();
             return;
