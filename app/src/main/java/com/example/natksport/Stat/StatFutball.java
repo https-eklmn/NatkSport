@@ -174,7 +174,7 @@ public class StatFutball extends AppCompatActivity {
                             case "Удар в створ ворот безрезультативный":
                                 twoPointsMissed++;
                                 break;
-                            case "Сейв":
+                            case "Сейф":
                                 blocked++;
                                 break;
                             case "Пенальти":
@@ -236,7 +236,7 @@ public class StatFutball extends AppCompatActivity {
                             case "Удар в створ ворот безрезультативный":
                                 twoPointsMissed++;
                                 break;
-                            case "Сейв":
+                            case "Сейф":
                                 blocked++;
                                 break;
                             case "Пенальти":

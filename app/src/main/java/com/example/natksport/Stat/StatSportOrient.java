@@ -2,6 +2,7 @@ package com.example.natksport.Stat;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -58,20 +59,23 @@ public class StatSportOrient extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 List<Double> hundredMeterTimes = new ArrayList<>();
-                int fourHundredMeterTimes=0;
-
+                int fourHundredMeterTimes = 0;
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     ActionLog action = snapshot.getValue(ActionLog.class);
                     if (action != null && action.getPlayerId().equals(playerId)) {
-                        double time = Double.parseDouble(action.getopisanie());
-                        switch (action.getAction()) {
-                            case "Время прохождения":
-                                hundredMeterTimes.add(time);
-                                break;
-                            case "Отметка пройдена не правильно":
-                                fourHundredMeterTimes++;
-                                break;
+                        try {
+                            switch (action.getAction()) {
+                                case "Время прохождения":
+                                    double time = Double.parseDouble(action.getopisanie());
+                                    hundredMeterTimes.add(time);
+                                    break;
+                                case "Отметка пройдена не правильно":
+                                    fourHundredMeterTimes++;
+                                    break;
+                            }
+                        } catch (NumberFormatException e) {
+                            Log.e("LoadRunStatistics", "Неверный формат времени: " + action.getopisanie());
                         }
                     }
                 }
@@ -82,6 +86,7 @@ public class StatSportOrient extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("FirebaseError", "Ошибка загрузки данных: " + databaseError.getMessage());
             }
         });
     }
