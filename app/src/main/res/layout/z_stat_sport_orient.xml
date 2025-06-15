@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:textColor="#0073B7"
-                    android:text="Заплыв на 50м"
+                    android:text="Время прохожднния дистанции"
                     android:layout_gravity="center"
                     android:textStyle="bold"/>
 
