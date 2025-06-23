@@ -62,7 +62,7 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private void checkIfUsernameExists(String username, String name, String surname, String patronymic,  String email, String password) {
-        userRef.orderByChild("Login").equalTo(username).addListenerForSingleValueEvent(new ValueEventListener() {
+        userRef.orderByChild("login").equalTo(username).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
